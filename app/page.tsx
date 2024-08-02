@@ -16,9 +16,9 @@ const sora = Sora({
 export default function Home() {
   return (
     <main className={`flex min-h-screen flex-col items-center bg-white justify-between ${sora.className}`}>
-      <section className="w-full h-[500px] flex bg-cover bg-center"
+      <section className="w-full h-[500px] flex flex-wrap bg-cover bg-center"
         style={{ backgroundImage: `url(${bannerMain.src})` }}>
-          <div className=" w-[50%] flex flex-col gap-4 justify-center pl-40">
+          <div className=" w-[50%] flex flex-col gap-4 justify-center pl-40 max-sm:w-full max-sm:pl-7 ">
           <Image src={logoyt}
          alt="logo"
          className="w-[160px] h-[110px]"
@@ -37,7 +37,7 @@ export default function Home() {
           </Link>
           
           </div>
-          <div className=" w-[50%]">
+          <div className=" w-[50%] max-sm:hidden">
             <Image
             src={fotoThiago}
             alt="foto do thiago"
@@ -85,8 +85,8 @@ export default function Home() {
           </div>
           
       </section>
-      <section className="w-full min-h-[500px] flex bg-black">
-          <div className=" w-[50%] flex flex-col gap-4 justify-center pl-40">
+      <section className="w-full min-h-[500px] flex flex-wrap bg-black">
+          <div className=" w-[50%] flex flex-col gap-4 justify-center pl-40 max-sm:w-full max-sm:p-8">
           <Image src={logoyt}
          alt="logo"
          className="w-[160px] h-[110px]"
@@ -102,34 +102,34 @@ export default function Home() {
           </Link>
           
           </div>
-          <div className="  flex justify-end bg-cover bg-right"
+          <div className=" max-sm:w-full  flex justify-end  bg-cover bg-right"
           
           style={{ backgroundImage: `url(${fundoCelular.src})` }}>
             <Image
             src={celular}
-            className="w-[350px] "
+            className="w-[350px] max-sm:w-[250px] "
             alt="celular"
             ></Image>
 
           </div>
       </section>
-      <section className="w-full min-h-[500px] flex  bg-cyan-400 p-24 text-black">
-        <div className="flex w-full border border-black rounded-md p-10">
-          <div className="w-[50%] flex justify-center items-center p-1">
+      <section className=" min-h-[500px] flex   bg-cyan-400 p-24 text-black">
+        <div className="flex flex-wrap min-h-[500px]  border border-black rounded-md p-10">
+          <div className="w-[50%] flex  justify-center items-center p-1 max-sm:w-full">
             <h2 className=" text-[40px]">
               Faltam poucos dias para <span className="bg-red-600  font-bold p-1">abrirem as vagas</span>
             </h2>
 
           </div>
-          <div className="w-[50%] flex justify-center items-center p-1">
-            <div className="bg-white flex items-center justify-center w-[30%] h-[80%] rounded-md">
-              <h2 className="text-[80px] font-extrabold">10</h2>
+          <div className="w-[50%]  flex flex-wrap justify-center items-center max-sm:w-auto p-1">
+            <div className="bg-white flex items-center justify-center w-[30%] h-[40%] max-sm:w-auto max-sm:p-3 max-sm:h-auto rounded-md">
+              <h2 className="text-[80px] max-sm:text-[25px] font-extrabold">10</h2>
             </div>
-            <h2 className="text-[80px] font-extrabold p-6">
+            <h2 className="text-[80px] max-sm:text-[20px] max-sm:h-auto font-extrabold p-6">
               :
             </h2>
-            <div className="bg-white w-[30%] flex items-center justify-center  h-[80%] rounded-md">
-            <h2 className="text-[80px] font-extrabold">D</h2>
+            <div className="bg-white w-[30%] flex items-center justify-center  h-[40%] max-sm:w-auto max-sm:p-3 max-sm:h-auto  rounded-md">
+            <h2 className="text-[80px] max-sm:text-[25px] font-extrabold">D</h2>
             </div>
 
           </div>
