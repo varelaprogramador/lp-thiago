@@ -60,7 +60,7 @@ export default function Home() {
 
         </div>
       </section>
-      <section className=" pb-[40px] pt-5 w-full min-h-[500px] flex bg-cover bg-center"
+      <section className=" pb-[40px] pt-5 w-full min-h-[500px] flex bg-cover bg-center max-sm:bg-left"
         style={{ backgroundImage: `url(${bannerMain2.src})` }}>
         <div className=" w-full flex flex-col gap-4 items-center ">
 
