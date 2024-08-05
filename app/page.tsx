@@ -15,7 +15,7 @@ const sora = Sora({
 
 export default function Home() {
   return (
-    <main className={`flex min-h-screen flex-col items-center bg-white justify-between ${sora.className}`}>
+    <main className={`flex min-h-screen flex-col items-center bg-white justify-between text-white ${sora.className}`}>
       <section className="w-full h-[500px] flex flex-wrap bg-cover bg-center"
         style={{ backgroundImage: `url(${bannerMain.src})` }}>
           <div className=" w-[50%] flex flex-col gap-4 justify-center pl-40 max-sm:w-full max-sm:pl-7 ">
