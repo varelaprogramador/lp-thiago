@@ -18,7 +18,7 @@ export default function Home() {
     <main className={`flex min-h-screen flex-col items-center bg-black justify-between text-white ${sora.className}`}>
       <section className=" pb-[40px] w-full min-h-[500px] flex flex-wrap bg-cover bg-center p-12"
         style={{ backgroundImage: `url(${bannerMain.src})` }}>
-          <div className=" w-[50%] flex flex-col gap-4 justify-center pl-40 max-sm:w-full max-sm:pl-7 ">
+          <div className=" w-[50%] flex flex-col gap-4 justify-center   pl-[15%] max-sm:w-full max-sm:pl-7 ">
           <Image src={logoyt}
           quality={100}
          alt="logo"
