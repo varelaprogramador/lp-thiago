@@ -126,7 +126,7 @@ export default function Home() {
           <Image
             quality={100}
             src={celular}
-            className="w-[350px] max-sm:w-[250px] "
+            className="w-[350px] max-h-[500px] max-sm:w-[250px] "
             alt="celular"
           ></Image>
 
