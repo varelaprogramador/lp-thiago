@@ -13,6 +13,16 @@ const sora = Sora({
   weight: '400', // Especifica o peso da fonte
 });
 
+const targetDate = new Date('2024-08-16');
+const datenow= new Date();
+// Calcule a diferença em milissegundos
+const differenceInTime = targetDate.getTime() - datenow.getTime();
+
+// Converta a diferença de milissegundos para dias
+const days = Math.round(differenceInTime / (1000 * 3600 * 24));
+console.log(days);
+
+
 export default function Home() {
   return (
     <main className={`flex min-h-screen flex-col items-center bg-gray-900 justify-between text-white ${sora.className}`}>
@@ -132,7 +142,7 @@ export default function Home() {
           </div>
           <div className="w-[50%] gap-5  flex  justify-center items-center max-lg:w-full max-sm:h-fit p-1">
             <div className="bg-white flex items-center justify-center p-11 max-sm:w-auto max-sm:p-[15px] max-sm:h-auto  rounded-md">
-              <h2 className="text-[80px] max-lg:text-[60px] max-sm:text-[55px] font-black">10</h2>
+              <h2 className="text-[80px] max-lg:text-[60px] max-sm:text-[55px] font-black">{days}</h2>
             </div>
             <h2 className="text-[80px] max-lg:text-[60px] max-sm:text-[55px] max-sm:h-auto font-black p-6">
               :
