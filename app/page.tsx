@@ -133,9 +133,9 @@ export default function Home() {
         </div>
       </section>
       <section className=" pb-[40px]pt-5  w-full min-h-[500px] flex justify-center bg-cyan-400 p-24 max-sm:p-10 text-black">
-        <div className="flex flex-row max-lg:flex-col   h-fit border border-black rounded-md p-24 gap-[50px] max-sm:p-6">
+        <div className="flex flex-row max-lg:flex-col   h-fit border border-black rounded-3xl p-24 gap-[50px] max-sm:p-6">
           <div className="w-[50%] flex  justify-center items-center p-1 max-lg:w-full">
-            <h2 className=" text-[3rem] max-sm:text-[2rem]  ">
+            <h2 className=" text-[3rem] max-sm:text-[2rem] font-black ">
               Faltam poucos dias para <span className="bg-red-600  font-bold p-1">abrirem as vagas</span>
             </h2>
 
