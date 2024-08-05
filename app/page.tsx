@@ -132,13 +132,13 @@ export default function Home() {
           </div>
           <div className="w-[50%] gap-5  flex  justify-center items-center max-lg:w-full max-sm:h-fit p-1">
             <div className="bg-white flex items-center justify-center p-11 max-sm:w-auto max-sm:p-[15px] max-sm:h-auto  rounded-md">
-              <h2 className="text-[80px] max-lg:text-[60px] max-sm:text-[55px] font-extrabold">10</h2>
+              <h2 className="text-[80px] max-lg:text-[60px] max-sm:text-[55px] font-black">10</h2>
             </div>
-            <h2 className="text-[80px] max-lg:text-[60px] max-sm:text-[55px] max-sm:h-auto font-extrabold p-6">
+            <h2 className="text-[80px] max-lg:text-[60px] max-sm:text-[55px] max-sm:h-auto font-black p-6">
               :
             </h2>
             <div className="bg-white p-11 flex items-center justify-center   max-sm:w-auto max-sm:p-[15px] max-sm:h-auto  rounded-md">
-            <h2 className="text-[80px] max-lg:text-[60px] max-sm:text-[55px] font-extrabold">D</h2>
+            <h2 className="text-[80px] max-lg:text-[60px] max-sm:text-[55px] font-black">D</h2>
             </div>
 
           </div>
