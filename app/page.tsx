@@ -67,7 +67,7 @@ export default function Home() {
             </p>
 
             <button
-              className="rounded-md bg-cyan-400 p-2 text-2xl font-black text-white"
+              className="max-w-fit rounded-md bg-cyan-400 p-2 text-2xl font-black text-white"
               onClick={() => {
                 openCreateSpotLead({
                   eventId: userIdentifier,
