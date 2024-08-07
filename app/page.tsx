@@ -22,7 +22,6 @@ const differenceInTime = targetDate.getTime() - datenow.getTime()
 
 // Converta a diferença de milissegundos para dias
 const days = Math.round(differenceInTime / (1000 * 3600 * 24))
-console.log(`quantidade de dias restantes ${days}`)
 
 export default function Home() {
   return (
