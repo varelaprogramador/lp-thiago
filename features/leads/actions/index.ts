@@ -178,3 +178,86 @@ export const bulkDeleteLeads = async (ids: string[]) => {
     }
   }
 }
+
+export const exportLeads = async ({
+  to,
+  from,
+  search,
+}: {
+  to: string | null
+  from: string | null
+  search: string | null
+}) => {
+  try {
+    let toFormatted: Date | undefined
+    let fromFormatted: Date | undefined
+
+    if (from) {
+      fromFormatted = new Date(from)
+      fromFormatted.setHours(0, 0, 0, 0)
+    }
+
+    if (to) {
+      toFormatted = new Date(to)
+      toFormatted.setHours(23, 59, 59, 999)
+    }
+
+    let where: any = {}
+
+    if (search) {
+      where = {
+        phone: {
+          contains: search,
+        },
+      }
+    }
+
+    if (from) {
+      where.createdAt = {
+        gte: fromFormatted,
+      }
+    }
+
+    if (to) {
+      where.createdAt = {
+        lte: toFormatted,
+      }
+    }
+
+    if (from && to) {
+      where.createdAt = {
+        gte: fromFormatted,
+        lte: toFormatted,
+      }
+    }
+
+    const leads = await db.lead.findMany({
+      where,
+      select: {
+        phone: true,
+        createdAt: true,
+      },
+      orderBy: {
+        createdAt: 'desc',
+      },
+    })
+
+    const data = leads.map(lead => {
+      return {
+        Contato: lead.phone,
+        'Data de cadastro': lead.createdAt,
+      }
+    })
+
+    return {
+      data,
+      success: 'Leads exportados com sucesso',
+    }
+  } catch (error) {
+    console.log(error)
+
+    return {
+      error: 'Ocorreu um erro ao exportar os leads. Tente novamente.',
+    }
+  }
+}

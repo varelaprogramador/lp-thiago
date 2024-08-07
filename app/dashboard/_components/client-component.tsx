@@ -4,13 +4,16 @@ import 'dayjs/locale/pt-br'
 
 import dayjs from 'dayjs'
 import Link from 'next/link'
+import * as XLSX from 'xlsx'
 import { toast } from 'sonner'
+import { saveAs } from 'file-saver'
 import { Lead } from '@prisma/client'
 import { UserButton } from '@clerk/nextjs'
-import { useRouter } from 'next/navigation'
 import { FaWhatsapp } from 'react-icons/fa'
+import { TbTableExport } from 'react-icons/tb'
 import { useState, useTransition } from 'react'
 import relativeTime from 'dayjs/plugin/relativeTime'
+import { useRouter, useSearchParams } from 'next/navigation'
 import { Loader2, SquareMousePointer, Trash } from 'lucide-react'
 
 import { Pagination } from './pagination'
@@ -19,7 +22,7 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { useConfirm } from '@/hooks/use-confirm'
 import { Checkbox } from '@/components/ui/checkbox'
-import { bulkDeleteLeads } from '@/features/leads/actions'
+import { bulkDeleteLeads, exportLeads } from '@/features/leads/actions'
 import { DatePickerWithRange } from '@/app/dashboard/_components/date-picker-with-range'
 
 import {
@@ -39,6 +42,7 @@ import {
   CardContent,
   CardDescription,
 } from '@/components/ui/card'
+import { Hint } from '@/components/hint'
 
 dayjs.extend(relativeTime)
 dayjs.locale('pt-br')
@@ -57,7 +61,9 @@ export const ClientComponent = ({
   totalRegisters,
 }: ClientComponentProps) => {
   const { refresh } = useRouter()
+  const searchParams = useSearchParams()
   const [selectedItems, setSelectedItems] = useState<string[]>([])
+  const [isExportingLeads, startExportingLeadsTransition] = useTransition()
   const [isDeletingSelectedItems, startDeletingSelectedItemsTransition] =
     useTransition()
 
@@ -115,6 +121,39 @@ export const ClientComponent = ({
     })
   }
 
+  const handleExportLeads = async () => {
+    startExportingLeadsTransition(async () => {
+      try {
+        const res = await exportLeads({
+          to: searchParams.get('to'),
+          from: searchParams.get('from'),
+          search: searchParams.get('search'),
+        })
+
+        if (res.error) {
+          toast.error(res.error)
+        }
+
+        if (res.success) {
+          toast.success(res.success)
+
+          const wb = XLSX.utils.book_new()
+          const ws = XLSX.utils.json_to_sheet(res.data)
+          XLSX.utils.book_append_sheet(wb, ws, 'Leads')
+          const buffer = XLSX.write(wb, { type: 'buffer', bookType: 'xlsx' })
+
+          const blob = new Blob([buffer], {
+            type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+          })
+
+          saveAs(blob, 'leads.xlsx')
+        }
+      } catch (error) {
+        toast.error('Ocorreu um erro ao exportar os leads. Tente novamente.')
+      }
+    })
+  }
+
   return (
     <>
       <main>
@@ -136,15 +175,34 @@ export const ClientComponent = ({
             <div className="flex flex-col justify-between gap-2 xl:flex-row">
               <SearchInput />
 
-              <div className="flex flex-col justify-between gap-2 md:flex-row">
+              <div className="flex flex-col gap-2 md:flex-row">
                 <DatePickerWithRange />
+
+                <Hint label="Exportar leads">
+                  <Button
+                    variant="outline"
+                    disabled={isExportingLeads}
+                    onClick={handleExportLeads}
+                    className="ml-auto w-full gap-2 md:w-fit"
+                  >
+                    {isExportingLeads ? (
+                      <Loader2 className="size-4 animate-spin" />
+                    ) : (
+                      <TbTableExport className="size-4" />
+                    )}
+
+                    <span>Exportar leads</span>
+                  </Button>
+                </Hint>
 
                 <Button
                   className="gap-2"
                   variant="destructive"
                   onClick={handleDeleteSelectedItems}
                   disabled={
-                    selectedItems.length === 0 || isDeletingSelectedItems
+                    selectedItems.length === 0 ||
+                    isDeletingSelectedItems ||
+                    isExportingLeads
                   }
                 >
                   {isDeletingSelectedItems ? (
