@@ -7,6 +7,7 @@ import { Sora } from 'next/font/google'
 
 import logoyt from './assets/logo-yt.png'
 import celular from './assets/CELULAR.png'
+import VideoPlayer from '@/components/video'
 import fotoThiago from './assets/img-thiago.png'
 import carousel from './assets/carousel-aulas.png'
 import bannerMain2 from './assets/banner-part-2.png'
@@ -102,6 +103,25 @@ export default function Home() {
               Um curso para <br />{' '}
               <span className="font-bold">você aprender do zero! </span>
             </h2>
+
+            <div className="p-4">
+              <Suspense
+                fallback={
+                  <div className="w-full max-w-[57.0625rem] rounded-2xl">
+                    <Image
+                      priority
+                      quality={100}
+                      draggable={false}
+                      alt="video-banner"
+                      className="size-full"
+                      src="/video-banner.png"
+                    />
+                  </div>
+                }
+              >
+                <VideoPlayer src="https://matratecnologia.s3.amazonaws.com/landing-page-thiago-reis.mp4" />
+              </Suspense>
+            </div>
 
             <button
               className="max-w-fit rounded-md bg-cyan-400 p-2 text-2xl font-black text-white"
