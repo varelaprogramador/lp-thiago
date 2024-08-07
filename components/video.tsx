@@ -26,14 +26,15 @@ const Video = ({ src }: VideoProps) => {
     <div className="relative w-full max-w-[57.0625rem] overflow-hidden rounded-2xl">
       <video
         autoPlay
+        playsInline
         ref={videoRef}
         preload="none"
         muted={isMuted}
         controls={false}
         disablePictureInPicture
         aria-label="Video player"
-        controlsList="nodownload"
         poster="/video-banner.png"
+        controlsList="nodownload nofullscreen"
         className="w-full max-w-[57.0625rem] rounded-2xl"
         onPlaying={() => setIsPlaying(true)}
         onPause={() => {
