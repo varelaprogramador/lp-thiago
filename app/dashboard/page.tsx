@@ -1,10 +1,10 @@
 import { Metadata } from 'next'
+import { Prisma } from '@prisma/client'
 import { redirect } from 'next/navigation'
 
 import { db } from '@/lib/db'
 import { currentUser } from '@clerk/nextjs/server'
 import { ClientComponent } from './_components/client-component'
-import { Prisma } from '@prisma/client'
 
 export const metadata: Metadata = {
   title: 'Dashboard',
@@ -87,8 +87,6 @@ export default async function Page({
       createdAt: 'desc',
     },
   })
-
-  console.log(toFormatted)
 
   if (pageInt > totalPages) {
     return redirect(`/dashboard?page=${totalPages}`)

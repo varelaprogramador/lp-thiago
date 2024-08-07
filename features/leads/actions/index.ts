@@ -158,3 +158,23 @@ export const facebookPixel = async ({
     console.log(error)
   }
 }
+
+export const bulkDeleteLeads = async (ids: string[]) => {
+  try {
+    await db.lead.deleteMany({
+      where: {
+        id: {
+          in: ids,
+        },
+      },
+    })
+
+    return {
+      success: 'Leads deletados com sucesso',
+    }
+  } catch (error) {
+    return {
+      error: 'Ocorreu um erro ao deletar os leads. Tente novamente.',
+    }
+  }
+}
