@@ -16,6 +16,7 @@ import relativeTime from 'dayjs/plugin/relativeTime'
 import { useRouter, useSearchParams } from 'next/navigation'
 import { Loader2, SquareMousePointer, Trash } from 'lucide-react'
 
+import { Hint } from '@/components/hint'
 import { Pagination } from './pagination'
 import { SearchInput } from './search-input'
 import { Badge } from '@/components/ui/badge'
@@ -42,7 +43,6 @@ import {
   CardContent,
   CardDescription,
 } from '@/components/ui/card'
-import { Hint } from '@/components/hint'
 
 dayjs.extend(relativeTime)
 dayjs.locale('pt-br')
