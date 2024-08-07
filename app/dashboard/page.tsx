@@ -53,5 +53,12 @@ export default async function Page({
     return redirect(`/dashboard`)
   }
 
-  return <ClientComponent data={data} />
+  return (
+    <ClientComponent
+      data={data}
+      currentPage={pageInt}
+      totalPages={totalPages}
+      totalRegisters={count || 0}
+    />
+  )
 }
