@@ -12,7 +12,6 @@ import fotoThiago from './assets/img-thiago.png'
 import carousel from './assets/carousel-aulas.png'
 import bannerMain2 from './assets/banner-part-2.png'
 import fundoCelular from './assets/fundo-celular.png'
-import bannerMain from './assets/banner-part-1-yt.png'
 import { FacebookPixel } from '@/components/facebook-pixel'
 import { CreateLeadModal } from '@/features/leads/components/create-lead-modal'
 import { useOpenCreateLeadModal } from '@/features/leads/hooks/use-open-create-lead-modal'
@@ -117,7 +116,22 @@ export default function Home() {
             </h2>
 
             <div className="p-4">
-              <VideoPlayer src="https://matratecnologia.s3.amazonaws.com/landing-page-thiago-reis.mp4" />
+              <Suspense
+                fallback={
+                  <div className="w-full max-w-[57.0625rem] rounded-2xl">
+                    <Image
+                      priority
+                      quality={100}
+                      draggable={false}
+                      alt="video-banner"
+                      className="size-full"
+                      src="/video-banner.png"
+                    />
+                  </div>
+                }
+              >
+                <VideoPlayer src="https://matratecnologia.s3.amazonaws.com/landing-page-thiago-reis.mp4" />
+              </Suspense>
             </div>
 
             <button
