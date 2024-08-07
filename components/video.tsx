@@ -34,9 +34,9 @@ const Video = ({ src }: VideoProps) => {
         disablePictureInPicture
         aria-label="Video player"
         poster="/video-banner.png"
+        onPlaying={() => setIsPlaying(true)}
         controlsList="nodownload nofullscreen"
         className="w-full max-w-[57.0625rem] rounded-2xl"
-        onPlaying={() => setIsPlaying(true)}
         onPause={() => {
           setIsPlaying(false)
         }}

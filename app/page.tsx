@@ -62,6 +62,7 @@ export default function Home() {
                 SER YOUTUBER?
               </span>
             </h1>
+
             <p className="text-[1rem] text-gray-300 min-[1200px]:w-[90%]">
               Um curso completo para você começar do zero e se tornar um
               Youtuber de sucesso!
@@ -80,6 +81,7 @@ export default function Home() {
               quero aprender
             </button>
           </div>
+
           <div className="flex w-[50%] items-end max-sm:hidden">
             <div className="w-full">
               <Image
@@ -91,6 +93,16 @@ export default function Home() {
                 alt="foto do thiago"
               />
             </div>
+          </div>
+
+          <div className="mb-10 mt-16 flex sm:hidden">
+            <Image
+              quality={100}
+              src={fotoThiago}
+              draggable={false}
+              alt="foto do thiago"
+              className="w-full scale-125 transform"
+            />
           </div>
         </section>
 
@@ -105,22 +117,7 @@ export default function Home() {
             </h2>
 
             <div className="p-4">
-              <Suspense
-                fallback={
-                  <div className="w-full max-w-[57.0625rem] rounded-2xl">
-                    <Image
-                      priority
-                      quality={100}
-                      draggable={false}
-                      alt="video-banner"
-                      className="size-full"
-                      src="/video-banner.png"
-                    />
-                  </div>
-                }
-              >
-                <VideoPlayer src="https://matratecnologia.s3.amazonaws.com/landing-page-thiago-reis.mp4" />
-              </Suspense>
+              <VideoPlayer src="https://matratecnologia.s3.amazonaws.com/landing-page-thiago-reis.mp4" />
             </div>
 
             <button
