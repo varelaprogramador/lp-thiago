@@ -13,6 +13,7 @@ import relativeTime from 'dayjs/plugin/relativeTime'
 import { Pagination } from './pagination'
 import { SearchInput } from './search-input'
 import { Badge } from '@/components/ui/badge'
+import { DatePickerWithRange } from '@/app/dashboard/_components/date-picker-with-range'
 
 import {
   Table,
@@ -67,7 +68,10 @@ export const ClientComponent = ({
         </CardHeader>
 
         <CardContent className="space-y-4">
-          <SearchInput />
+          <div className="flex flex-col gap-2">
+            <SearchInput />
+            <DatePickerWithRange />
+          </div>
 
           <Table className="border">
             <TableHeader>
