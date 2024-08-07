@@ -38,11 +38,11 @@ export default function Home() {
   return (
     <>
       <main
-        className={`flex min-h-screen flex-col items-center justify-between bg-[#0d0d0d] text-white ${sora.className}`}
+        className={`flex min-h-screen flex-col items-center justify-between overflow-x-hidden bg-[#0d0d0d] text-white ${sora.className}`}
       >
         <section
-          className="flex min-h-[500px] w-full flex-wrap bg-cover bg-center p-12 pb-[40px]"
-          style={{ backgroundImage: `url(${bannerMain.src})` }}
+          className="flex min-h-[500px] w-full flex-wrap bg-[url('/mobile-banner-part-1-yt.png')] bg-cover bg-center p-12 pb-[40px] sm:bg-[url('/banner-part-1-yt.png')]"
+          // style={{ backgroundImage: `url(${bannerMain.src})` }}
         >
           <div className="flex w-[50%] flex-col justify-center gap-4 pl-[15%] max-sm:w-full max-sm:pl-7">
             <Image
@@ -95,7 +95,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="mb-10 mt-16 flex sm:hidden">
+          <div className="mb-10 mt-20 flex w-full items-center justify-center sm:hidden">
             <Image
               quality={100}
               src={fotoThiago}
