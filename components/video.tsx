@@ -61,7 +61,7 @@ const Video = ({ src }: VideoProps) => {
         value={progress}
         className="absolute bottom-0 left-0 right-0 z-10 h-2.5 rounded-none bg-transparent"
         indicatorStyle={{
-          backgroundColor: '#00ff0c',
+          backgroundColor: '#22d3ee',
         }}
       />
 
