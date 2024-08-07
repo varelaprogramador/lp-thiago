@@ -124,7 +124,7 @@ export const ClientComponent = ({
           </CardContent>
         </Card>
 
-        <Card>
+        <Card className="m-4">
           <CardHeader>
             <CardTitle>Lista de leads</CardTitle>
             <CardDescription>
