@@ -35,11 +35,14 @@ export default function Home() {
       >
         <div className="flex w-[50%] flex-col justify-center gap-4 pl-[15%] max-sm:w-full max-sm:pl-7">
           <Image
+            priority
+            alt="logo"
             src={logoyt}
             quality={100}
-            alt="logo"
+            draggable={false}
             className="h-[110px] w-[160px]"
-          ></Image>
+          />
+
           <h1 className="text-[3rem] max-lg:text-[2rem]">
             Vale a pena{' '}
             <span className="text-cyan-400">larga seu emprego </span> para
@@ -61,11 +64,13 @@ export default function Home() {
         <div className="flex w-[50%] items-end max-sm:hidden">
           <div className="w-full">
             <Image
+              priority
               quality={100}
-              className="w-full"
               src={fotoThiago}
+              draggable={false}
+              className="w-full"
               alt="foto do thiago"
-            ></Image>
+            />
           </div>
         </div>
       </section>
@@ -95,8 +100,10 @@ export default function Home() {
           </h2>
 
           <Image
+            priority
             quality={100}
             src={carousel}
+            draggable={false}
             alt="carrousel-aulas"
             className="w-full bg-cover"
           />
@@ -112,9 +119,11 @@ export default function Home() {
       <section className="flex min-h-[500px] w-full flex-wrap items-center justify-center pt-5 min-[1000px]:pb-[150px]">
         <div className="flex w-[50%] flex-col justify-center gap-4 pl-40 max-lg:w-full max-lg:p-8">
           <Image
+            priority
+            alt="logo"
             src={logoyt}
             quality={100}
-            alt="logo"
+            draggable={false}
             className="h-[110px] w-[160px]"
           />
 
@@ -138,11 +147,13 @@ export default function Home() {
           style={{ backgroundImage: `url(${fundoCelular.src})` }}
         >
           <Image
+            priority
             quality={100}
-            src={celular}
-            className="max-h-[500px] w-[350px] max-sm:w-[250px]"
             alt="celular"
-          ></Image>
+            src={celular}
+            draggable={false}
+            className="max-h-[500px] w-[350px] max-sm:w-[250px]"
+          />
         </div>
       </section>
 
