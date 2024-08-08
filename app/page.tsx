@@ -55,7 +55,7 @@ export default function Home() {
 
             <h1 className="text-[3rem] max-lg:text-[2rem]">
               Vale a pena{' '}
-              <span className="text-cyan-400">larga seu emprego </span> para
+              <span className="text-cyan-400">Largar seu emprego </span> para
               <br />
               <span className="bg-red-600 p-1 font-bold text-white">
                 SER YOUTUBER?
