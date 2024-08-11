@@ -73,7 +73,7 @@ export default function Home() {
                 openCreateSpotLead({
                   eventId: userIdentifier,
                   whatsappGroup:
-                    'https://chat.whatsapp.com/IpuYar3Q9jhCAC9bhRyepE',
+                    'https://chat.whatsapp.com/FnqqWr7JIf5G2WRCrRg0Sr',
                 })
               }}
             >
@@ -140,7 +140,7 @@ export default function Home() {
                 openCreateSpotLead({
                   eventId: userIdentifier,
                   whatsappGroup:
-                    'https://chat.whatsapp.com/IpuYar3Q9jhCAC9bhRyepE',
+                    'https://chat.whatsapp.com/FnqqWr7JIf5G2WRCrRg0Sr',
                 })
               }}
             >
@@ -171,7 +171,7 @@ export default function Home() {
                 openCreateSpotLead({
                   eventId: userIdentifier,
                   whatsappGroup:
-                    'https://chat.whatsapp.com/IpuYar3Q9jhCAC9bhRyepE',
+                    'https://chat.whatsapp.com/FnqqWr7JIf5G2WRCrRg0Sr',
                 })
               }}
             >
@@ -206,7 +206,7 @@ export default function Home() {
                 openCreateSpotLead({
                   eventId: userIdentifier,
                   whatsappGroup:
-                    'https://chat.whatsapp.com/IpuYar3Q9jhCAC9bhRyepE',
+                    'https://chat.whatsapp.com/FnqqWr7JIf5G2WRCrRg0Sr',
                 })
               }}
             >
