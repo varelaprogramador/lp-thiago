@@ -130,7 +130,7 @@ export default function Home() {
                   </div>
                 }
               >
-                <VideoPlayer src="https://matratecnologia.s3.amazonaws.com/landing-page-thiago-reis.mp4" />
+                <VideoPlayer src="./landing-page-thiago-reis.mp4" />
               </Suspense>
             </div>
 
